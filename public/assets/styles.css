@@ -1,0 +1,22 @@
+.index-body {
+    background-image:
+        url(/public/assets/rpsgif1.gif);
+    background-size: 100%;
+    background-color: transparent;
+}
+
+.card:hover {
+    background-color: bisque;
+}
+
+.game-h1 {
+    color: antiquewhite;
+}
+
+.game-p {
+    color: antiquewhite;
+}
+
+.card img {
+    width: 200px;
+}
