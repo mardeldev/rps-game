@@ -1,4 +1,4 @@
-.index-body {
+.body-bg {
     background-image:
         url(/public/assets/rpsgif1.gif);
     background-size: 100%;
@@ -8,6 +8,8 @@
 .card:hover {
     background-color: bisque;
 }
+
+
 
 .game-h1 {
     color: antiquewhite;
@@ -19,4 +21,46 @@
 
 .card img {
     width: 200px;
+    border-radius: 20px;
+}
+
+.weapon-icon {
+    width: 75px;
+    height: 75px;
+}
+
+
+
+.weapon-icon:hover {
+    box-shadow:
+        1px 1px 2px rgb(153, 153, 255),
+        0 0 25px rgb(249, 221, 184),
+        0 0 5px rgb(204, 184, 67);
+
+}
+
+.weapon-row:hover {
+    width: 100%;
+    cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+footer p {
+    color: antiquewhite;
+}
+
+body p {
+    color: antiquewhite;
+}
+
+.card p {
+    color: black;
+}
+
+weapons {
+    width: 300px;
 }

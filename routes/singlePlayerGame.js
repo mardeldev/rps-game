@@ -5,17 +5,18 @@ const Player = require('../src/player.js');
 
 router.post('/', (req, res) => {
   const battle = new Battle();
-  const names = [req.body.playerName];
+  const names = [req.body.playerName, 'Computer'];
+  console.log(req.body);
   battle.setup(names);
   req.app.locals.battle = battle;
 
-  res.redirect('/game');
+  res.redirect('/singleplayer/game');
 })
 
 router.get('/', (req, res) => {
   const player = req.app.locals.battle.currentPlayer();
 
-  res.render('game', {
+  res.render('singleplayergame', {
     name: player.name,
     health: player.health
   });

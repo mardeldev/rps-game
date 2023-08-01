@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link href="/public/assets/styles.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>
+    Choose your weapon
+  </title>
+</head>
+
+<body class="body-bg">
+
+  <div class="container-fluid d-flex justify-content-center">
+    <header class="">
+      <h1 class="text-center game-p mt-2">
+        It's <%= name %>'s turn!
+      </h1>
+      <h3 class="text-cente game-p">Please choose a weapon to attack with:</h3>
+    </header>
+  </div>
+
+  <div class="container-fluid d-flex justify-content-center py-4 mt-5">
+
+
+
+    <div class="row align-items-center justify-content-between px-5">
+
+
+      <form action="/turn" method="post">
+        <div class="col justify-content-center px-5">
+          <div class="row weapon-row">
+            <input type="hidden" id="rock" name="weapon" value="rock">
+            <input type="image" src="../public/assets/rock.png" class="img-fluid rounded-circle weapon-icon"
+              alt="rock by Icongeek26">
+            <p class="text-center py-4">Rock</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <form action="/turn" method="post">
+      <div class="col justify-content-center px-5 ">
+        <div class="row weapon-row">
+          <input type="hidden" id="paper" name="weapon" value="paper">
+          <input type="image" src="../public/assets/paper.png" class="img-fluid rounded-circle weapon-icon"
+            alt="paper by Freepik" name="paper">
+          <p class="text-center py-4">Paper</p>
+        </div>
+      </div>
+    </form>
+
+    <form action="/turn" method="post">
+      <div class="col justify-content-center px-5">
+        <div class="row weapon-row">
+          <input type="hidden" id="scissors" name="weapon" value="scissors">
+          <input type="image" src="../public/assets/scissors.png" class="img-fluid rounded-circle weapon-icon"
+            alt="scissors by Gulraiz" name="scissors">
+          <p class="text-center py-4">Scissors</p>
+        </div>
+      </div>
+    </form>
+
+    <form action="/turn" method="post">
+      <div class="col  justify-content-center px-5">
+        <div class="row weapon-row">
+          <input type="hidden" id="spock" name="weapon" value="spock">
+          <input type="image" src="../public/assets/spock.png" class="img-fluid rounded-circle weapon-icon"
+            alt="spock by Freepik" name="spock">
+          <p class="text-center py-4">Spock</p>
+        </div>
+      </div>
+    </form>
+
+    <form action="/turn" method="post">
+      <div class="col  justify-content-center px-5">
+        <div class="row weapon-row">
+          <input type="hidden" id="lizard" name="weapon" value="lizard">
+          <input type="image" src="../public/assets/lizard.png" class="img-fluid rounded-circle weapon-icon"
+            alt="lizard by Flat Icons" name="lizard">
+          <p class="text-center py-4">Lizard</p>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- <div class="container-fluid d-flex justify-content-center">
+        <input id="attack-button" type="submit" value="ATTACK!" class="btn btn-danger">
+      </div> -->
+
+
+
+
+
+  </div>
+
+
+  <footer class="container-fluid">
+    <p class="text-center"><small>&copy; By Aimable Mardel 2023</small></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
