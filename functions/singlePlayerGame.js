@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Battle = require('../src/battle.js');
+const Battle = require('./battle.js');
 const Player = require('../src/player.js');
 
 router.post('/', (req, res) => {
