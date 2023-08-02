@@ -9,6 +9,7 @@ class Battle {
     this.playerWeapon;
     this.computerWeapon;
     this.finalScore = [];
+    this.playCounter = 1;
   }
 
   currentPlayer() {
@@ -31,8 +32,20 @@ class Battle {
     return this.noOfRounds;
   }
 
+  getPlayCounter() {
+    return this.playCounter;
+  }
+
+  getPlayerWeapon() {
+    return this.playerWeapon;
+  }
+
   iterateRound() {
     this.currentRound += 1;
+  }
+
+  iteratePlayCounter() {
+    this.playCounter += 1;
   }
 
   attack(weapon) {
@@ -42,15 +55,19 @@ class Battle {
   }
 
   setPlayerWeapon(weapon) {
-    this.playerWeapon = weapon;
+    this.currentPlayer().setWeapon(weapon);
+    this.playerWeapon = this.currentPlayer().getWeapon();
+    console.log(this.playerWeapon);
   }
 
-  getPlayerWeapon() {
-    return this.playerWeapon;
+  resetPlayCounter() {
+    this.playCounter = 1;
   }
 
   setComputerWeapon() {
-    this.computerWeapon = weapons[(Math.floor(Math.random() * 5))];
+    this.otherPlayer().setWeapon(weapons[(Math.floor(Math.random() * 5))]);
+    this.computerWeapon = this.otherPlayer().getWeapon();
+    console.log(this.computerWeapon);
   }
 
   getComputerWeapon() {
@@ -67,64 +84,62 @@ class Battle {
     }
   }
 
-
-
   allocatePoint() {
-    if (this.playerWeapon === this.computerWeapon) {
+    if (this.currentPlayer().getWeapon() === this.otherPlayer().getWeapon()) {
       this.iterateRound()
       return "Draw";
     }
 
-    switch (this.playerWeapon) {
+    switch (this.currentPlayer().getWeapon()) {
       case "rock":
-        if (this.computerWeapon === "scissors" || this.computerWeapon === "lizard") {
+        if (this.otherPlayer().getWeapon() === "scissors" || this.otherPlayer().getWeapon() === "lizard") {
           this.currentPlayer().addPoint();
           this.iterateRound()
-          return (`Point goes to: ${this.players[0].name}`);
+          return (`Point goes to: ${this.currentPlayer().name}`);
         } else {
           this.otherPlayer().addPoint();
           this.iterateRound()
           return (`Point goes to: ${this.players[1].name}`);
         }
       case "paper":
-        if (this.computerWeapon === "rock" || this.computerWeapon === "spock") {
+        if (this.otherPlayer().getWeapon() === "rock" || this.otherPlayer().getWeapon() === "spock") {
           this.currentPlayer().addPoint();
           this.iterateRound()
-          return (`Point goes to: ${this.players[0].name}`);
+          return (`Point goes to: ${this.currentPlayer().name}`);
         } else {
           this.otherPlayer().addPoint();
           this.iterateRound()
           return (`Point goes to: ${this.players[1].name}`);
         }
       case "scissors":
-        if (this.computerWeapon === "paper" || this.computerWeapon === "lizard") {
+        if (this.otherPlayer().getWeapon() === "paper" || this.otherPlayer().getWeapon() === "lizard") {
           this.currentPlayer().addPoint();
           this.iterateRound()
-          return (`Point goes to: ${this.players[0].name}`);
+          return (`Point goes to: ${this.currentPlayer().name}`);
         } else {
           this.otherPlayer().addPoint();
           this.iterateRound()
-          return (`Point goes to: ${this.players[1].name}`);
+          return (`Point goes to: ${this.otherPlayer().name}`);
         }
       case "lizard":
-        if (this.computerWeapon === "spock" || this.computerWeapon === "paper") {
+        if (this.otherPlayer().getWeapon() === "spock" || this.otherPlayer().getWeapon() === "paper") {
           this.currentPlayer().addPoint();
           this.iterateRound()
-          return (`Point goes to: ${this.players[0].name}`);
+          return (`Point goes to: ${this.currentPlayer().name}`);
         } else {
           this.otherPlayer().addPoint();
           this.iterateRound()
-          return (`Point goes to: ${this.players[1].name}`);
+          return (`Point goes to: ${this.otherPlayer().name}`);
         }
       case "spock":
-        if (this.computerWeapon === "scissors" || this.computerWeapon === "rock") {
+        if (this.otherPlayer().getWeapon() === "scissors" || this.otherPlayer().getWeapon() === "rock") {
           this.currentPlayer().addPoint();
           this.iterateRound()
-          return (`Point goes to: ${this.players[0].name}`);
+          return (`Point goes to: ${this.currentPlayer().name}`);
         } else {
           this.otherPlayer().addPoint();
           this.iterateRound()
-          return (`Point goes to: ${this.players[1].name}`);
+          return (`Point goes to: ${this.otherPlayer().name}`);
         }
       default:
         return "Invalid input";

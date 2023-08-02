@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     winner: winner
   })
 
-
+  req.app.locals.playCounter = null
 })
 
 module.exports = router;

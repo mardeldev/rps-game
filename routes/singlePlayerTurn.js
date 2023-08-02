@@ -7,7 +7,6 @@ router.post('/', (req, res) => {
   const otherPlayer = battle.otherPlayer();
 
 
-
   let roundWinner = battle.attack(req.body.weapon);
   let playerWeapon = battle.getPlayerWeapon();
   let computerWeapon = battle.getComputerWeapon();
@@ -16,16 +15,11 @@ router.post('/', (req, res) => {
   let continueURL;
 
   if (battle.getRound() <= battle.getNoOfRounds()) {
+    // battle.switch();
     continueURL = '/singleplayer/game';
-  } else if (battle.getRound > battle.getNoOfRounds) {
+  } else if (battle.getRound() > battle.getNoOfRounds()) {
     continueURL = '/gameresult';
   }
-
-
-
-
-
-
 
   res.render('singleplayerturn', {
     currentPlayer: currentPlayer,
