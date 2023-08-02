@@ -13,36 +13,43 @@
 
 <body class="body-bg">
 
+
   <div class="container-fluid d-flex justify-content-center">
     <header class="">
       <h1 class="text-center game-p mt-2">
-        It's <%= name %>'s turn!
+        <%= name %>, let's go!
       </h1>
-      <h3 class="text-cente game-p">Please choose a weapon to attack with:</h3>
+      <h2 class="text-center game-p mt-2">
+        Round <%= round %> of <%= rounds %>
+      </h2>
+      <h3 class="text-center game-p">Please choose a weapon to attack with:</h3>
     </header>
   </div>
 
-  <div class="container-fluid d-flex justify-content-center py-4 mt-5">
+  <div class="choose-weapon d-flex flex-wrap justify-content-evenly py-4 mt-5">
 
 
 
-    <div class="row align-items-center justify-content-between px-5">
 
 
-      <form action="/turn" method="post">
-        <div class="col justify-content-center px-5">
-          <div class="row weapon-row">
-            <input type="hidden" id="rock" name="weapon" value="rock">
-            <input type="image" src="../public/assets/rock.png" class="img-fluid rounded-circle weapon-icon"
-              alt="rock by Icongeek26">
-            <p class="text-center py-4">Rock</p>
-          </div>
+
+    <form action="/singleplayer/turn" method="post">
+      <div class=" justify-content-center px-5">
+        <div class="row weapon-row">
+          <input type="hidden" id="rock" name="weapon" value="rock">
+          <input type="image" src="../public/assets/rock.png" class="img-fluid rounded-circle weapon-icon"
+            alt="rock by Icongeek26">
+          <p class="text-center py-4">Rock</p>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
 
-    <form action="/turn" method="post">
-      <div class="col justify-content-center px-5 ">
+
+
+
+
+    <form action="/singleplayer/turn" method="post">
+      <div class=" justify-content-center px-5 ">
         <div class="row weapon-row">
           <input type="hidden" id="paper" name="weapon" value="paper">
           <input type="image" src="../public/assets/paper.png" class="img-fluid rounded-circle weapon-icon"
@@ -52,8 +59,12 @@
       </div>
     </form>
 
-    <form action="/turn" method="post">
-      <div class="col justify-content-center px-5">
+
+
+
+
+    <form action="/singleplayer/turn" method="post">
+      <div class=" justify-content-center px-5">
         <div class="row weapon-row">
           <input type="hidden" id="scissors" name="weapon" value="scissors">
           <input type="image" src="../public/assets/scissors.png" class="img-fluid rounded-circle weapon-icon"
@@ -63,8 +74,8 @@
       </div>
     </form>
 
-    <form action="/turn" method="post">
-      <div class="col  justify-content-center px-5">
+    <form action="/singleplayer/turn" method="post">
+      <div class="  justify-content-center px-5">
         <div class="row weapon-row">
           <input type="hidden" id="spock" name="weapon" value="spock">
           <input type="image" src="../public/assets/spock.png" class="img-fluid rounded-circle weapon-icon"
@@ -74,8 +85,8 @@
       </div>
     </form>
 
-    <form action="/turn" method="post">
-      <div class="col  justify-content-center px-5">
+    <form action="/singleplayer/turn" method="post">
+      <div class="  justify-content-center px-5">
         <div class="row weapon-row">
           <input type="hidden" id="lizard" name="weapon" value="lizard">
           <input type="image" src="../public/assets/lizard.png" class="img-fluid rounded-circle weapon-icon"
@@ -87,9 +98,31 @@
   </div>
 
 
-  <!-- <div class="container-fluid d-flex justify-content-center">
-        <input id="attack-button" type="submit" value="ATTACK!" class="btn btn-danger">
-      </div> -->
+  <div class="container-fluid d-flex justify-content-center">
+    <div class="row justify-content-center">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#gameRules" role="button" aria-expanded="false"
+        aria-controls="collapseExample" style="max-width: 120px;">
+        View Rules
+      </a>
+
+      <div class="collapse card border-light mb-3 justify-content-center mt-3" style="max-width: 18rem;" id="gameRules">
+        <div class="card-header text-center">Rules
+          <div class="card-body">
+            <h5 class="card-title">Who beats Who?</h5>
+            <p class="card-text">Spock smashes scissors and vaporizes rock; he is poisoned by lizard and disproved by
+              paper. Lizard poisons Spock and
+              eats paper; it is crushed by rock and decapitated by scissors.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
 
 
 
@@ -101,6 +134,8 @@
   <footer class="container-fluid">
     <p class="text-center"><small>&copy; By Aimable Mardel 2023</small></p>
   </footer>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
