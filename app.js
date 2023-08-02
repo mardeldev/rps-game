@@ -35,5 +35,5 @@ app.use('/game', gameRouter);
 app.use('/turn', turnRouter);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Rock Paper Scissors Spock Lizard app listening at http://localhost:${port}`)
 });
