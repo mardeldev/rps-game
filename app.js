@@ -42,5 +42,5 @@ app.use('/game', gameRouter);
 app.use('/turn', turnRouter);
 
 app.listen(process.env.PORT, () => {
-  console.log(`Rock Paper Scissors Spock Lizard app listening at ${process.env.PORT}`)
+  console.log(`Rock Paper Scissors Spock Lizard app listening at http://localhost:${process.env.PORT}`)
 });
