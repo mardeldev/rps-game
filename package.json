@@ -6,7 +6,6 @@
   "scripts": {
     "start": "nodemon app",
     "build": "nodemon app.js",
-    "vercel-build": "vercel-build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
