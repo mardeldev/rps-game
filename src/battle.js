@@ -66,7 +66,6 @@ class Battle {
   setComputerWeapon() {
     this.otherPlayer().setWeapon(weapons[(Math.floor(Math.random() * 5))]);
     this.computerWeapon = this.otherPlayer().getWeapon();
-    console.log(this.computerWeapon);
   }
 
   getComputerWeapon() {

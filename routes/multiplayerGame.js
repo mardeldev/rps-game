@@ -17,22 +17,10 @@ router.post('/', (req, res) => {
         let noOfRounds = parseInt(req.body.noOfRounds);
 
         battle.setup(names, noOfRounds);
-
-
-
-
-        console.log('IM RUNNING THISSSSS');
-
         req.app.locals.battle = battle;
-
-
         res.redirect('/multiplayer/game')
-
     }
-
     res.redirect('/multiplayer/game')
-
-
 })
 
 

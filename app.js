@@ -1,11 +1,9 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
-const config = dotenv.config({
-  path: "./config.env",
-});
 
 let port = process.env.PORT;
+let host = process.env.HOST;
 if (port == null || port == "") {
   port = 8000;
 }
@@ -44,5 +42,5 @@ app.use('/turn', turnRouter);
 
 app.listen(port, () => {
 
-  console.log(`Rock Paper Scissors Spock Lizard app listening on port http://localhost:${port}`)
+  console.log(`Rock Paper Scissors Spock Lizard app listening on port ${host}:${port}`)
 });
