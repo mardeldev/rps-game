@@ -5,9 +5,7 @@ const config = dotenv.config({
   path: "./config.env",
 });
 
-
-
-const port = 4000;
+const port = 8000;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
@@ -41,7 +39,7 @@ app.use('/gameresult', singlePlayerGameResultRouter);
 app.use('/game', gameRouter);
 app.use('/turn', turnRouter);
 
-app.listen(process.env.PORT, '0.0.0.0', err => {
-  if (err) throw err
-  console.log(`Rock Paper Scissors Spock Lizard app listening on port https://localhost:${process.env.PORT}`)
+app.listen(port, () => {
+
+  console.log(`Rock Paper Scissors Spock Lizard app listening on port http://localhost:${port}`)
 });
