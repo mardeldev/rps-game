@@ -1,5 +1,12 @@
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv');
+const config = dotenv.config({
+  path: "./config.env",
+});
+
+
+
 const port = 4000;
 
 app.set('view engine', 'ejs');
@@ -34,6 +41,6 @@ app.use('/gameresult', singlePlayerGameResultRouter);
 app.use('/game', gameRouter);
 app.use('/turn', turnRouter);
 
-app.listen(port, () => {
-  console.log(`Rock Paper Scissors Spock Lizard app listening at http://localhost:${port}`)
+app.listen(process.env.PORT, () => {
+  console.log(`Rock Paper Scissors Spock Lizard app listening at ${process.env.PORT}`)
 });
