@@ -43,5 +43,5 @@ app.use('/turn', turnRouter);
 
 app.listen(process.env.PORT, '0.0.0.0', err => {
   if (err) throw err
-  console.log(`Rock Paper Scissors Spock Lizard app listening on port https://0.0.0.0:${process.env.PORT}`)
+  console.log(`Rock Paper Scissors Spock Lizard app listening on port https://localhost:${process.env.PORT}`)
 });
