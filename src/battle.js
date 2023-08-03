@@ -57,7 +57,6 @@ class Battle {
   setPlayerWeapon(weapon) {
     this.currentPlayer().setWeapon(weapon);
     this.playerWeapon = this.currentPlayer().getWeapon();
-    console.log(this.playerWeapon);
   }
 
   resetPlayCounter() {
