@@ -12,21 +12,11 @@ router.post('/', (req, res) => {
 
   req.app.locals.battle = battle;
 
+  req.body.playerName == '' ? names.push('Pingu', 'Computer') : names.push(req.body.playerName, 'Computer');
 
-  if (req.body.playerName == '') {
-    names.push('Pingu', 'Computer')
-  } else {
-    names.push(req.body.playerName, 'Computer');
-  }
   battle.setup(names, noOfRounds);
-
-
-
   res.redirect('/singleplayer/game');
-
-
 })
-
 
 router.get('/', (req, res) => {
   const player = req.app.locals.battle.currentPlayer();

@@ -15,7 +15,6 @@ router.post('/', (req, res) => {
   let continueURL;
 
   if (battle.getRound() <= battle.getNoOfRounds()) {
-    // battle.switch();
     continueURL = '/singleplayer/game';
   } else if (battle.getRound() > battle.getNoOfRounds()) {
     continueURL = '/gameresult';
@@ -31,7 +30,6 @@ router.post('/', (req, res) => {
     roundWinner: roundWinner,
     continueURL: continueURL
   });
-
 
 })
 

@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 
+dotenv.config({ path: `.env${process.env.NODE_ENV ? `.${process.env.NODE_ENV}` : ''}` });
 let port = process.env.PORT;
 let host = process.env.HOST;
 if (port == null || port == "") {
@@ -40,7 +41,7 @@ app.use('/gameresult', singlePlayerGameResultRouter);
 app.use('/game', gameRouter);
 app.use('/turn', turnRouter);
 
-app.listen(port, () => {
+app.listen(port, host, () => {
 
-  console.log(`Rock Paper Scissors Spock Lizard app listening on port ${host}:${port}`)
+  console.log(`Rock Paper Scissors Spock Lizard app listening on http://${host}:${port}`)
 });
