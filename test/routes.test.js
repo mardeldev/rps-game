@@ -10,14 +10,9 @@ describe('Routes tests', () => {
         it('should setup a new game', async () => {
             const res = await chai.request(app)
                 .post('/singleplayer/game')
-                .send({ playerName: 'Waluigi', noOfRounds: '2' })
+                .send({ playerName: 'Waluigi', noOfRounds: '2' });
 
             expect(res).to.have.status(200);
         });
-
-
     })
-
-
-
 })
