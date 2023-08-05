@@ -18,4 +18,9 @@ describe('Battle tests', () => {
         expect(battle.getNoOfRounds()).to.equal(2);
     })
 
+    it('should be able to have and access two players', () => {
+        expect(battle.currentPlayer().name).to.equal('Zelda');
+        expect(battle.otherPlayer().name).to.equal('Bowser');
+    })
+
 })
