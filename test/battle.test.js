@@ -34,4 +34,10 @@ describe('Battle tests', () => {
         expect(battle.getRound()).to.equal(2);
     })
 
+    it('should be able to determine the winner', () => {
+        battle.attack('rock');
+        battle.attack('scissors');
+        expect(battle.getWinner()).to.be.oneOf(['Zelda', 'Bowser', 'a draw']);
+    })
+
 })

@@ -5,9 +5,6 @@ const Player = require('../src/player.js');
 
 router.post('/', (req, res) => {
 
-    let playCounter = 0;
-
-
     if (!req.app.locals.playCounter) {
         let names = ['Pingu', 'Yoda'];
         if (req.body.playerName1 != '') { names[0] = req.body.playerName1 };

@@ -23,7 +23,7 @@ const multiplayerGameRouter = require('./routes/multiplayerGame.js');
 const multiplayerTurnRouter = require('./routes/multiplayerTurn.js');
 
 const roundResultRouter = require('./routes/roundResult.js');
-const singlePlayerGameResultRouter = require('./routes/singlePlayerGameResult.js');
+const gameResultRouter = require('./routes/gameResult.js');
 const gameRouter = require('./routes/game.js');
 const turnRouter = require('./routes/turn.js');
 
@@ -37,7 +37,7 @@ app.use('/multiplayer/game', multiplayerGameRouter);
 app.use('/multiplayer/turn', multiplayerTurnRouter);
 
 app.use('/roundresult', roundResultRouter);
-app.use('/gameresult', singlePlayerGameResultRouter);
+app.use('/gameresult', gameResultRouter);
 app.use('/game', gameRouter);
 app.use('/turn', turnRouter);
 
