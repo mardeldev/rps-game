@@ -29,4 +29,9 @@ describe('Battle tests', () => {
         expect(battle.otherPlayer().name).to.equal('Zelda');
     })
 
+    it('should be able to attack', () => {
+        battle.attack('lizard');
+        expect(battle.getRound()).to.equal(2);
+    })
+
 })
