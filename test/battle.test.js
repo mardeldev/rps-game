@@ -23,4 +23,10 @@ describe('Battle tests', () => {
         expect(battle.otherPlayer().name).to.equal('Bowser');
     })
 
+    it('should be able to switch players', () => {
+        battle.switch();
+        expect(battle.currentPlayer().name).to.equal('Bowser');
+        expect(battle.otherPlayer().name).to.equal('Zelda');
+    })
+
 })
