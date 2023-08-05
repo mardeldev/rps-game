@@ -13,4 +13,8 @@ describe('Player tests', () => {
         expect(player.name).to.equal('Thanos');
     })
 
+    it('should start with 0 points', () => {
+        expect(player.getPoints()).to.equal(0);
+    })
+
 })
