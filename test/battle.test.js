@@ -14,6 +14,8 @@ describe('Battle tests', () => {
         expect(battle.getRound()).to.equal(1);
     })
 
-    it('should have th', () => { second })
+    it('should have the correct number of rounds', () => {
+        expect(battle.getNoOfRounds()).to.equal(2);
+    })
 
 })
