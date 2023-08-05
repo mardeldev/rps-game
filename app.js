@@ -45,3 +45,6 @@ app.listen(port, host, () => {
 
   console.log(`Rock Paper Scissors Spock Lizard app listening on http://${host}:${port}`)
 });
+
+
+module.exports = app;
