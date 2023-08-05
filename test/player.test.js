@@ -22,4 +22,6 @@ describe('Player tests', () => {
         expect(player.getWeapon()).to.equal('spock');
     })
 
+    it('should be able to add player points', () => { second })
+
 })

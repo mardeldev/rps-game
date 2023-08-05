@@ -5,10 +5,6 @@ class Player {
     this.weapon;
   }
 
-  takeDamage(amount) {
-    this.health -= amount;
-  }
-
   addPoint() {
     this.points += 1;
   }
