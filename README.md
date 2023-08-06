@@ -47,7 +47,7 @@ You will be able to remind yourself of the rules at each round as you are choosi
 
 ---
 # Installation
-You can play instantly using the link at the top of this README, but if you would like for your experience to be smoother and play locally then follow the following instructions:
+You can play instantly using the link at the top of this README, but if you would like for your experience to be smoother and play locally then follow these instructions:
 
 - Clone this repo
 - Navigate to:
