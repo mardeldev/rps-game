@@ -1,62 +1,71 @@
-# RPS Challenge
+# Rock Paper Scissors Spock Lizard
 
-Instructions
--------
+### >> [Play the game here!](https://rps-v1--mardeldev.repl.co/) <<
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or trainee, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by the deadline specified in Noodle
+# How to play
 
-Task
-----
+---
 
-The DFA team ( **DFAT** ) have asked you to provide a game for them. The daily grind is pretty tough and they need time to have a little fun.
+There are two game modes: **single player** and **multiplayer.**
 
-As usual please start by
+### Single Player:
 
-* Forking this repo
-* TEST driving development of your app
+<img src="./public/assets/singleplayer-gameplay.gif" alt="single player mode" width="700"/>
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+For this game mode, you will be playing against the computer.
 
-### Acceptance Criteria
+- Choose **single player** on the home page.
+- Enter your name and choose how many rounds you would like to play.
+- Click 'Play!' and you will be taken into the first round.
+- You will choose your weapon first, and then the computer will choose its weapon randomly.
+- After the number of rounds you chose have been played, the winner will then be displayed, along with the amount of points received each.
+
+### Multiplayer:
+
+<img src="./public/assets/multiplayer-gameplay.gif" alt="multiplayer mode" width="700"/>
+
+For this game mode, you will be playing against someone else in the same room as you.
+
+- Choose **multiplayer** on the home page.
+- Enter the names of the players, and choose how many rounds you would like to play.
+- Click 'Play!' and you will be taken into the first round.
+
+
+<img src="./public/assets/multiplayer-attack-rounds.gif" alt="multiplayer mode" width="700"/>
+
+- The name of the player whose turn it is will be displayed on each round.
+- Take turns to choose a weapon and you will see the results of each round.
+- After the number of rounds you chose have been played, the winner will then be displayed, along with the amount of points received each.
+- The winner will be declared when the number of rounds chosen have been played. You will also see the points of each player.
+
+
+### Rules:
+You will be able to remind yourself of the rules at each round as you are choosing your weapon. Stay informed!
+
+<img src="./public/assets/view-rules.gif" alt="multiplayer mode" width="500"/>
+
+
+---
+# Installation
+You can play instantly using the link at the top of this README, but if you would like for your experience to be smoother and play locally then follow the following instructions:
+
+- Clone this repo
+- Navigate to:
 ```
-As a DFAT member
-So that I can see my name
-I would like to register my name before playing an online game
-
-As a DFAT member
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+rock-paper-scissors-challenge
 ```
-
-Hints on functionality
-
-- the DFAT member should be able to enter their name before the game
-- the DFAT member will be presented the choices (rock, paper and scissors)
-- the DFAT member can choose one option
-- the game will choose a random option
-- a winner will be declared and an option to play again
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High test coverage
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-### Extended Acceptance Criteria
-
-#### Multiplayer
-
-Change the game so that two DFAT members can play against each other ( _yes there are two of them and they'll be playing on the same computer_ ).
-
-#### Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+ 
+- Install the project dependencies with the command:
+```
+npm i
+```
+- Run the tests using the command:
+```
+npm test
+```
+- Run the app:
+```
+npm start
+```
+- In your browser, go to the address `http://localhost:8000/`
+- Enjoy your game!
