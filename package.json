@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=dev nodemon app",
     "build": "NODE_ENV=dev && npm install && nodemon app",
-    "test": "NODE_ENV=test mocha --timeout=10000 --exit"
+    "test": "NODE_ENV=test mocha --timeout=10000 --exit",
+    "c8-cov": "NODE_ENV=test c8 npm test"
   },
   "keywords": [
     "example",
@@ -24,6 +25,7 @@
     "node": "18.17.0"
   },
   "devDependencies": {
+    "c8": "^8.0.1",
     "chai": "^4.3.7",
     "chai-http": "^4.4.0",
     "mocha": "^10.2.0"
