@@ -5,9 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: `.env${process.env.NODE_ENV ? `.${process.env.NODE_ENV}` : ''}` });
 let port = process.env.PORT;
 let host = process.env.HOST;
-if (port == null || port == "") {
-  port = 8000;
-}
+if (port == null || port == "") { port = 8000; }
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
@@ -24,8 +22,7 @@ const multiplayerTurnRouter = require('./routes/multiplayerTurn.js');
 
 const roundResultRouter = require('./routes/roundResult.js');
 const gameResultRouter = require('./routes/gameResult.js');
-const gameRouter = require('./routes/game.js');
-const turnRouter = require('./routes/turn.js');
+
 
 app.use('/', indexRouter);
 app.use('/singleplayer', singlePlayerRouter);
@@ -38,8 +35,7 @@ app.use('/multiplayer/turn', multiplayerTurnRouter);
 
 app.use('/roundresult', roundResultRouter);
 app.use('/gameresult', gameResultRouter);
-app.use('/game', gameRouter);
-app.use('/turn', turnRouter);
+
 
 app.listen(port, host, () => {
 
