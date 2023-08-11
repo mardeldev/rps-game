@@ -6,7 +6,16 @@ const Battle = require('../src/battle.js');
 
 chai.use(chaiHttp);
 
+
 describe('Routes tests', () => {
+
+    describe('GET /', () => {
+        it('should render the index view', async () => {
+            const res = await chai.request(app).get('/');
+            expect(res).to.have.status(200);
+            expect(res.text).to.include('Rock, Paper, Scissors, Spock, Lizard!');
+        });
+    });
 
     describe('GET /singleplayer', () => {
         it('should render the singleplayer index view', async () => {
